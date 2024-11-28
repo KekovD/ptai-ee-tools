@@ -12,8 +12,6 @@ import com.ptsecurity.appsec.ai.ee.utils.ci.integration.api.v490.ApiClient;
 import com.ptsecurity.appsec.ai.ee.utils.ci.integration.api.v490.converters.EnumsConverter;
 import com.ptsecurity.appsec.ai.ee.utils.ci.integration.api.v490.converters.IssuesConverter;
 import com.ptsecurity.appsec.ai.ee.utils.ci.integration.api.v490.converters.ScanErrorsConverter;
-import com.ptsecurity.appsec.ai.ee.utils.ci.integration.api.v490.tasks.ProjectTasksImpl;
-import com.ptsecurity.appsec.ai.ee.utils.ci.integration.api.v490.tasks.ServerVersionTasksImpl;
 import com.ptsecurity.appsec.ai.ee.utils.ci.integration.domain.AdvancedSettings;
 import com.ptsecurity.appsec.ai.ee.utils.ci.integration.tasks.GenericAstTasks;
 import com.ptsecurity.appsec.ai.ee.utils.ci.integration.tasks.ServerVersionTasks;

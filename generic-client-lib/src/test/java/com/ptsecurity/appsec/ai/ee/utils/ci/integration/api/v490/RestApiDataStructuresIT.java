@@ -9,7 +9,6 @@ import com.ptsecurity.appsec.ai.ee.server.integration.rest.Environment;
 import com.ptsecurity.appsec.ai.ee.server.v490.api.ApiResponse;
 import com.ptsecurity.appsec.ai.ee.utils.ci.integration.JsonAstJobIT;
 import com.ptsecurity.appsec.ai.ee.utils.ci.integration.ProjectTemplate;
-import com.ptsecurity.appsec.ai.ee.utils.ci.integration.api.v490.ApiClient;
 import com.ptsecurity.appsec.ai.ee.utils.ci.integration.client.BaseClientIT;
 import com.ptsecurity.appsec.ai.ee.utils.ci.integration.domain.ConnectionSettings;
 import com.ptsecurity.appsec.ai.ee.utils.ci.integration.jobs.AbstractJob;
