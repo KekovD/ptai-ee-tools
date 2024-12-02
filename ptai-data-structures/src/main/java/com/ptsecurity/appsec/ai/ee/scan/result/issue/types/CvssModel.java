@@ -1,6 +1,7 @@
 package com.ptsecurity.appsec.ai.ee.scan.result.issue.types;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,16 +11,17 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 @NoArgsConstructor
-public class ScaIssue extends BaseIssue {
-    @JsonProperty("licenses")
-    private String[] licenses;
+@AllArgsConstructor
+public class CvssModel {
+    @JsonProperty("baseVector")
+    public String baseVector;
 
-    @JsonProperty("ptOsvs")
-    private PtOsvModel[] ptOsvs;
-
-    @JsonProperty("component")
-    private String component;
+    @JsonProperty("baseScore")
+    public String baseScore;
 
     @JsonProperty("version")
-    private String version;
+    public String version;
+
+    @JsonProperty("severity")
+    public BaseIssue.Level severity;
 }

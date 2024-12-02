@@ -60,6 +60,7 @@ public class AiProjV14ScanSettings extends UnifiedAiProjScanSettings {
         SCAN_MODULE_MAP.put(BLACK_BOX.value(), ScanModule.BLACKBOX);
         SCAN_MODULE_MAP.put(PATTERN_MATCHING.value(), ScanModule.PATTERNMATCHING);
         SCAN_MODULE_MAP.put(STATIC_CODE_ANALYSIS.value(), ScanModule.STATICCODEANALYSIS);
+        SCAN_MODULE_MAP.put(SOFTWARE_COMPOSITION_ANALYSIS.value(), ScanModule.SOFTWARECOMPOSITIONANALYSIS);
 
         DOTNET_PROJECT_TYPE_MAP.put(DotNetProjectType.NONE.value(), DotNetSettings.ProjectType.NONE);
         DOTNET_PROJECT_TYPE_MAP.put(DotNetProjectType.SOLUTION.value(), DotNetSettings.ProjectType.SOLUTION);
@@ -292,6 +293,14 @@ public class AiProjV14ScanSettings extends UnifiedAiProjScanSettings {
         return RubySettings.builder()
                 .usePublicAnalysisMethod(B("RubySettings.UsePublicAnalysisMethod"))
                 .customParameters(S("RubySettings.CustomParameters"))
+                .build();
+    }
+
+    @Override
+    public ScaSettings getScaSettings() {
+        if (N("ScaSettings").isMissingNode()) return null;
+        return ScaSettings.builder()
+                .customParameters(S("ScaSettings.CustomParameters"))
                 .build();
     }
 

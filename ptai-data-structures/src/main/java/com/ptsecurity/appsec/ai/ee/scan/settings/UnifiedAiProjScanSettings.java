@@ -318,7 +318,8 @@ public abstract class UnifiedAiProjScanSettings {
         @Deprecated
         DATAFLOWANALYSIS("DataFlowAnalysis"),
         @Deprecated
-        VULNERABLESOURCECODE("VulnerableSourceCode");
+        VULNERABLESOURCECODE("VulnerableSourceCode"),
+        SOFTWARECOMPOSITIONANALYSIS("SoftwareCompositionAnalysis");
 
         @Getter
         private final String value;
@@ -484,6 +485,18 @@ public abstract class UnifiedAiProjScanSettings {
     }
 
     public RubySettings getRubySettings() {
+        return null;
+    }
+
+    @Getter
+    @Setter
+    @Builder
+    @AllArgsConstructor
+    public static class ScaSettings {
+        protected String customParameters;
+    }
+
+    public ScaSettings getScaSettings() {
         return null;
     }
 
