@@ -655,6 +655,10 @@
           "title": "Custom parameters",
           "description": "Custom SCA kernel startup parameters",
           "type": ["null", "string"]
+        },
+        "BuildDependenciesGraph": {
+          "title": "Build bependencies graph",
+          "type": ["null", "boolean"]
         }
       }
     },
