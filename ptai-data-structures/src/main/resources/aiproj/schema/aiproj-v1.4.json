@@ -702,8 +702,7 @@
           "Components",
           "BlackBox",
           "PatternMatching",
-          "StaticCodeAnalysis",
-          "SoftwareCompositionAnalysis"
+          "StaticCodeAnalysis"
         ]
       }
     },
