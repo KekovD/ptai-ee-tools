@@ -330,6 +330,21 @@ public class AiProjConverter {
     }
 
     @SneakyThrows
+    public static ScaSettingsModel apply(
+            @NonNull final UnifiedAiProjScanSettings settings,
+            ScaSettingsModel model) {
+        if (model == null) {
+            model = new ScaSettingsModel();
+        }
+        if (null == settings.getScaSettings()) return model;
+        UnifiedAiProjScanSettings.ScaSettings scaSettings = settings.getScaSettings();
+
+        model.setLaunchParameters(scaSettings.getCustomParameters());
+        model.setBuildDependenciesGraph(scaSettings.getBuildDependenciesGraph());
+        return model;
+    }
+
+    @SneakyThrows
     public static MailingProjectSettingsModel apply(
             @NonNull final UnifiedAiProjScanSettings settings,
             MailingProjectSettingsModel model,
@@ -401,6 +416,7 @@ public class AiProjConverter {
         model.setRubySettings(apply(settings, model.getRubySettings()));
         model.setPmTaintSettings(apply(settings, model.getPmTaintSettings()));
         model.setPygrepSettings(apply(settings, model.getPygrepSettings()));
+        model.setScaSettings(apply(settings, model.getScaSettings()));
         model.setReportAfterScan(apply(settings, model.getReportAfterScan(), client));
 
         return model;

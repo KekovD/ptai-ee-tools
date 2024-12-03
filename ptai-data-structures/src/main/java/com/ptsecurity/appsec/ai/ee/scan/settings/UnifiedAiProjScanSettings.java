@@ -315,11 +315,11 @@ public abstract class UnifiedAiProjScanSettings {
         BLACKBOX("BlackBox"),
         PATTERNMATCHING("PatternMatching"),
         STATICCODEANALYSIS("StaticCodeAnalysis"),
+        SOFTWARECOMPOSITIONANALYSIS("SoftwareCompositionAnalysis"),
         @Deprecated
         DATAFLOWANALYSIS("DataFlowAnalysis"),
         @Deprecated
-        VULNERABLESOURCECODE("VulnerableSourceCode"),
-        SOFTWARECOMPOSITIONANALYSIS("SoftwareCompositionAnalysis");
+        VULNERABLESOURCECODE("VulnerableSourceCode");
 
         @Getter
         private final String value;

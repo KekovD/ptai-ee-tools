@@ -51,6 +51,8 @@ public class IssuesConverter {
         ISSUE_TYPE_MAP.put(IssueType.BLACKBOX.name(), BaseIssue.Type.BLACKBOX);
         ISSUE_TYPE_MAP.put(IssueType.YARAMATCH.name(), BaseIssue.Type.YARAMATCH);
         ISSUE_TYPE_MAP.put(IssueType.PYGREP.name(), BaseIssue.Type.PYGREP);
+        ISSUE_TYPE_MAP.put(IssueType.SCA.name(), BaseIssue.Type.SCA);
+        ISSUE_TYPE_MAP.put(IssueType.FINGERPRINTSCA.name(), BaseIssue.Type.FINGERPRINT_SCA);
 
         ISSUE_LEVEL_MAP.put(IssueLevel.NONE, BaseIssue.Level.NONE);
         ISSUE_LEVEL_MAP.put(IssueLevel.POTENTIAL, BaseIssue.Level.POTENTIAL);
@@ -368,9 +370,11 @@ public class IssuesConverter {
         else if (IssueType.PYGREP == issueType) {
             // can't get info from  VulnerabilityModel and idk if it needs
             baseIssue = new PygrepIssue();
-        }
-
-        else {
+        } else if (IssueType.SCA == issueType) {
+            baseIssue = new ScaIssue();
+        } else if (IssueType.FINGERPRINTSCA == issueType) {
+            baseIssue = new FingerprintScaIssue();
+        } else {
             log.warn("Issue {} conversion failed", issue);
             return;
         }
