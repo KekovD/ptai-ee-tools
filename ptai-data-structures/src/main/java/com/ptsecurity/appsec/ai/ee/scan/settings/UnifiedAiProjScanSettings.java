@@ -494,6 +494,7 @@ public abstract class UnifiedAiProjScanSettings {
     @AllArgsConstructor
     public static class ScaSettings {
         protected String customParameters;
+        protected Boolean buildDependenciesGraph;
     }
 
     public ScaSettings getScaSettings() {

@@ -77,5 +77,6 @@ class AiProjV14ScanSettingsTest {
         assertTrue(settings.getScanModules().contains(SOFTWARECOMPOSITIONANALYSIS));
 
         assertEquals("-l python --log-level debug  --scan-all-files", scaSettings.customParameters);
+        assertEquals(true, scaSettings.buildDependenciesGraph);
     }
 }
