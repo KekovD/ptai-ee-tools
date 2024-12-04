@@ -11,6 +11,8 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 public class ScaIssue extends BaseIssue {
+    protected String file;
+
     @JsonProperty("licenses")
     private String[] licenses;
 

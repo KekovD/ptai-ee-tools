@@ -371,7 +371,9 @@ public class IssuesConverter {
             // can't get info from  VulnerabilityModel and idk if it needs
             baseIssue = new PygrepIssue();
         } else if (IssueType.SCA == issueType) {
-            baseIssue = new ScaIssue();
+            ScaIssue scaIssue = new ScaIssue();
+            scaIssue.setFile(issue.getSourceFile());
+            baseIssue = scaIssue;
         } else if (IssueType.FINGERPRINTSCA == issueType) {
             baseIssue = new FingerprintScaIssue();
         } else {

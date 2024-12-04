@@ -182,9 +182,18 @@ public class Sarif extends Export {
                 location.withPhysicalLocation(phl(weaknessIssue.getVulnerableExpression()));
             } else if (BaseIssue.Type.YARAMATCH.equals(issue.getClazz()) ||
                     BaseIssue.Type.PYGREP.equals(issue.getClazz()) ||
-                    BaseIssue.Type.SCA.equals(issue.getClazz()) ||
-                    BaseIssue.Type.FINGERPRINT_SCA.equals(issue.getClazz()))
+                    BaseIssue.Type.FINGERPRINT_SCA.equals(issue.getClazz())) {
                 continue;
+            } else if (BaseIssue.Type.SCA.equals(issue.getClazz())) {
+                ScaIssue scaIssue = (ScaIssue) issue;
+                location.withPhysicalLocation(
+                        new PhysicalLocation()
+                                .withArtifactLocation(
+                                        new ArtifactLocation()
+                                                .withUri(fixUri(scaIssue.getFile()))
+                                                .withUriBaseId("SRCROOT")
+                                ));
+            }
 
             sarifRun.getResults().add(result);
         }
